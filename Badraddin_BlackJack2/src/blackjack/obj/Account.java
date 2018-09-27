@@ -1,0 +1,38 @@
+package blackjack.obj;
+
+import java.io.*;
+import java.net.URL;
+
+public class Account {
+ //username and pass word for  account
+ private String userName;
+ private String passWord;
+ //private int ID;
+ 
+ //account constructor to create a new account
+ public Account(String userName,String passWord) throws IOException {
+  //username and passwordis created
+  this.userName = userName;
+  this.passWord = passWord;
+  //loads the textfile in utility to write the text in
+  URL url = this.getClass().getClassLoader().getResource("blackjack/utility/info.txt");
+  //
+  System.out.println(url.toString());
+  BufferedWriter writer = new BufferedWriter(new FileWriter(url.getPath(),true));
+ //writes user name and password into the file 
+  writer.write(userName + " "+ passWord);
+  writer.newLine();
+  //close the file
+  writer.close();
+ }
+
+ public String getUserName() {
+  return userName;
+ }
+
+ public String getPassWord() {
+  return passWord;
+ }
+
+ 
+}
