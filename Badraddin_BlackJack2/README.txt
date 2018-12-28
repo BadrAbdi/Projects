@@ -1,2 +1,2 @@
 This is a non-image based GUI of Black Jack 
-Run src/blackjack/gui/BlackjacjGUI.java
+Run src/blackjack/gui/Blackjacj.gui

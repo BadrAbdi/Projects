@@ -15,7 +15,7 @@ import java.util.Random;
  */
 public class Cards{
   //treemap of the card and pair
-	// pair is a class created to store value of a card and the amount left in the deck
+ // pair is a class created to store value of a card and the amount left in the deck
   private TreeMap <Character,Pair> deck;
   //supresses rawtype warning of the arraylist
   @SuppressWarnings("rawtypes")
@@ -25,7 +25,7 @@ private ArrayList next;
   //supresswarnig for arraylist
   @SuppressWarnings("rawtypes")
 public Cards(){
-    deck = new TreeMap<>();
+    deck = new TreeMap<Character,Pair>();
     next = new ArrayList();
     add();
    
@@ -35,7 +35,7 @@ public Cards(){
 //supress unchecked warnings for the 
   @SuppressWarnings("unchecked")              
   public void add(){
-	  //creates deck with letter and amount and value
+   //creates deck with letter and amount and value
     deck.put('A',new Pair(4,11));
     deck.put('Q',new Pair(4,10));
     deck.put('K',new Pair(4,10));
@@ -53,9 +53,9 @@ public Cards(){
     
     
     @SuppressWarnings("rawtypes")
-	NavigableSet check = deck.navigableKeySet();
+ NavigableSet check = deck.navigableKeySet();
     @SuppressWarnings("rawtypes")
-	Iterator itr = check.iterator();
+ Iterator itr = check.iterator();
     while(itr.hasNext()){
       next.add(itr.next());
     }
@@ -64,7 +64,7 @@ public Cards(){
   public int hit(){
     while(true){
       @SuppressWarnings("rawtypes")
-	NavigableSet check = deck.navigableKeySet();
+ NavigableSet check = deck.navigableKeySet();
       Iterator<Character> itr = check.iterator();
       int x = rand.nextInt(12);
       char ch =' ';
@@ -91,7 +91,7 @@ public Cards(){
     Pair(int amount,int value){
       this.amount = amount;
       this.value = value;
-       chars =new ArrayList<>(Arrays.asList('H','D','S','C'));
+       chars =new ArrayList<Character>(Arrays.asList('H','D','S','C'));
     }
   }
   //shows the card that hits
